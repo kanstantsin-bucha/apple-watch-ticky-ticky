@@ -6,16 +6,21 @@
 //
 
 import SwiftUI
+import WatchKit
 
 @main
 struct WristWatchApp: App {
+    @WKExtensionDelegateAdaptor private var extensionDelegate: WristWatchAppDelegate
+    
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
                 ContentView()
             }
         }
-
-        WKNotificationScene(controller: NotificationController.self, category: "myCategory")
+        WKNotificationScene(
+            controller: NotificationController.self,
+            category: NotificationCategory.watch
+        )
     }
 }

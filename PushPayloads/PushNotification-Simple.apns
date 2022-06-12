@@ -1,0 +1,12 @@
+{
+    "aps": {
+        "alert": {
+            "body": "Test message",
+            "title": "Optional title",
+            "subtitle": "Optional subtitle"
+        },
+        "category": "Watch_Category",
+        "thread-id": "5281"
+    },
+    "Simulator Target Bundle": "com.kanstantsinbucha.watch.WristWatch.watchkitapp"
+}

@@ -24,6 +24,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func handleSharedComplicationDescriptors(_ complicationDescriptors: [CLKComplicationDescriptor]) {
         // Do any necessary work to support these newly shared complication descriptors
+        print("ComplicationController handleSharedComplicationDescriptors")
     }
 
     // MARK: - Timeline Configuration
@@ -31,11 +32,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         // Call the handler with the last entry date you can currently provide or nil if you can't support future timelines
         handler(nil)
+        print("ComplicationController getTimelineEndDate")
     }
     
     func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
         // Call the handler with your desired behavior when the device is locked
         handler(.showOnLockScreen)
+        print("ComplicationController getPrivacyBehavior")
     }
 
     // MARK: - Timeline Population
@@ -43,11 +46,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
         handler(nil)
+        print("ComplicationController getCurrentTimelineEntry")
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries after the given date
         handler(nil)
+        print("ComplicationController getTimelineEntries")
     }
 
     // MARK: - Sample Templates
@@ -55,5 +60,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
         handler(nil)
+        print("ComplicationController getLocalizableSampleTemplate")
     }
 }
