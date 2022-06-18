@@ -18,7 +18,7 @@ class WristWatchAppDelegate: NSObject, WKExtensionDelegate, ObservableObject {
 
     func applicationDidBecomeActive() {
         log.event("Application DidBecomeActive")
-        sessionDelegate.currentSession.start(at: Date().addingTimeInterval(1))
+        sessionDelegate.startSession(after: 1)
         service(GatesKeeper.self).notificationsGate.open()
     }
 

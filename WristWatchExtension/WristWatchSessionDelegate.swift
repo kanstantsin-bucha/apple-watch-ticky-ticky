@@ -8,11 +8,31 @@
 import WatchKit
 
 public final class WristWatchSessionDelegate: NSObject, WKExtendedRuntimeSessionDelegate {
-    public private(set) lazy var currentSession: WKExtendedRuntimeSession = {
-        let session = WKExtendedRuntimeSession()
-        session.delegate = self
-        return session
-    }()
+    public private(set) var currentSession: WKExtendedRuntimeSession?
+    
+    public func startSession(after postponeInterval: TimeInterval) {
+        log.info("""
+            RuntimeSession going to create new session, previous: \
+            \(String(describing: currentSession))
+            """
+        )
+        let createNewSession = {
+            let session = WKExtendedRuntimeSession()
+            session.delegate = self
+            session.start(at: Date(timeIntervalSinceNow: postponeInterval))
+            self.currentSession = session
+            log.event("RuntimeSession created new session")
+        }
+        guard let previous = currentSession, previous.state == .running else {
+            createNewSession()
+            return
+        }
+        playHaptic()
+        previous.invalidate()
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) {
+            createNewSession()
+        }
+    }
     
     public func extendedRuntimeSession(
         _ session: WKExtendedRuntimeSession,
@@ -53,22 +73,21 @@ public final class WristWatchSessionDelegate: NSObject, WKExtendedRuntimeSession
         )
         if let launchDate = session.expirationDate?.addingTimeInterval(1) {
             WKInterfaceDevice.current().play(.retry)
-            currentSession.invalidate()
-            currentSession = WKExtendedRuntimeSession()
-            currentSession.delegate = self
-            currentSession.start(at: launchDate)
+            startSession(after: 1)
             log.info("Going to start new session at \(launchDate)")
         }
     }
     
-    private func playHaptic() {
-        guard currentSession.state == .running else {
+    // MARK: - Private
+    
+    private func playHaptic(type: WKHapticType? = nil) {
+        guard let session = currentSession, session.state == .running else {
             log.error("Session is not running, skip haptic action")
             return
         }
-        log.event("Play haptic")
-        let type = hapticType(date: Date())
-        currentSession.notifyUser(hapticType: type) { [weak self] typePointer in
+        log.event("Play haptic: \(String(describing: type))")
+        let type = type ?? hapticType(date: Date())
+        session.notifyUser(hapticType: type) { [weak self] typePointer in
             let nextPlayInterval: TimeInterval = 60
             guard let self = self else { return nextPlayInterval }
             let type = self.hapticType(date: Date().addingTimeInterval(nextPlayInterval))
