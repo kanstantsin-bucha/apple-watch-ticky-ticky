@@ -24,6 +24,7 @@ public final class WristWatchSessionDelegate: NSObject, WKExtendedRuntimeSession
             error: \(String(describing: error))
             """
         )
+        WKInterfaceDevice.current().play(.failure)
     }
 
     public func extendedRuntimeSessionDidStart(
@@ -34,6 +35,7 @@ public final class WristWatchSessionDelegate: NSObject, WKExtendedRuntimeSession
             \(String(describing: session.expirationDate))
             """
         )
+        WKInterfaceDevice.current().play(.success)
         let correctionInterval = secondsToElapseToFullMinute(date: Date())
         DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(correctionInterval)) { [weak self] in
             self?.playHaptic()
@@ -50,6 +52,7 @@ public final class WristWatchSessionDelegate: NSObject, WKExtendedRuntimeSession
             """
         )
         if let launchDate = session.expirationDate?.addingTimeInterval(1) {
+            WKInterfaceDevice.current().play(.retry)
             currentSession.invalidate()
             currentSession = WKExtendedRuntimeSession()
             currentSession.delegate = self
