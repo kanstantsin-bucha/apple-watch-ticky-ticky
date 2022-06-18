@@ -81,12 +81,10 @@ public final class WristWatchSessionDelegate: NSObject, WKExtendedRuntimeSession
     private func hapticType(date: Date) -> WKHapticType {
         let calendar = Calendar.current
         let minutes = calendar.component(.minute, from: date)
-        switch minutes {
-        case 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55:
-            return .start
-        default:
+        guard minutes % 5 == 0 else {
             return .click
         }
+        return .start
     }
     
     private func secondsToElapseToFullMinute(date: Date) -> Int {
