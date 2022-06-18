@@ -12,7 +12,7 @@ let log: Logging = Logger()
 enum LogType {
     case error
     case warning
-    case debug
+    case info
     
     // -/ here are user actions /-
     
@@ -33,7 +33,7 @@ protocol Logging {
     func error(_ error: Error, prefix: String)
     func error(_ message: String, prefix: String)
     func warning(_ message: String, prefix: String)
-    func debug(_ message: String, prefix: String)
+    func info(_ message: String, prefix: String)
     // MARK: - here are user actions
     
     func user(_ message: String, prefix: String)
@@ -62,8 +62,8 @@ extension Logging {
         printLog(message, level: .warning, prefix: prefix)
     }
     
-    func debug(_ message: String, prefix: String = #fileID) {
-        printLog(message, level: .debug, prefix: prefix)
+    func info(_ message: String, prefix: String = #fileID) {
+        printLog(message, level: .info, prefix: prefix)
     }
     
     // MARK: - here are user actions
@@ -100,7 +100,7 @@ struct Logger: Logging {
     // MARK: - Private methods
     
     func printLog(_ statement: String, level: LogType, prefix: String) {
-        let message = truncated(prefix) + " " + statement
+        let message = Date().ISO8601Format() + "| " + truncated(prefix) + "| " + statement
         switch level {
         case LogType.error:
             print("⛔️ \(message)")
@@ -108,7 +108,7 @@ struct Logger: Logging {
         case LogType.warning:
             print("🔔 \(message)")
         
-        case LogType.debug:
+        case LogType.info:
             print("ℹ️ \(message)")
             
         // -/ here are user actions /-

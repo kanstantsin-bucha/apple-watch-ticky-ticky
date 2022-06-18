@@ -15,8 +15,12 @@
 		<string>com.apple.watchkit</string>
 	</dict>
 	<key>UIBackgroundModes</key>
-	<array/>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>WKBackgroundModes</key>
-	<array/>
+	<array>
+		<string>alarm</string>
+	</array>
 </dict>
 </plist>
