@@ -7,10 +7,18 @@
 
 import WatchKit
 
-public final class WristWatchSessionDelegate: NSObject, WKExtendedRuntimeSessionDelegate {
+public final class ExtendedSessionService: NSObject, Service, WKExtendedRuntimeSessionDelegate {
     public private(set) var currentSession: WKExtendedRuntimeSession?
     
-    public func startSession(after postponeInterval: TimeInterval) {
+    public func stop() {
+        guard let previous = currentSession, previous.state == .running else {
+            return
+        }
+        playHaptic(type: .directionDown)
+        previous.invalidate()
+    }
+    
+    public func start(after postponeInterval: TimeInterval) {
         log.info("""
             RuntimeSession going to create new session, previous: \
             \(String(describing: currentSession))
@@ -21,13 +29,15 @@ public final class WristWatchSessionDelegate: NSObject, WKExtendedRuntimeSession
             session.delegate = self
             session.start(at: Date(timeIntervalSinceNow: postponeInterval))
             self.currentSession = session
+            service(AppStatePersistence.self).state.sessionState = .scheduled
+            WKInterfaceDevice.current().play(.click)
             log.event("RuntimeSession created new session")
         }
         guard let previous = currentSession, previous.state == .running else {
             createNewSession()
             return
         }
-        playHaptic()
+        playHaptic(type: .stop)
         previous.invalidate()
         DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) {
             createNewSession()
@@ -44,7 +54,9 @@ public final class WristWatchSessionDelegate: NSObject, WKExtendedRuntimeSession
             error: \(String(describing: error))
             """
         )
-        WKInterfaceDevice.current().play(.failure)
+    
+        WKInterfaceDevice.current().play(error != nil ? .failure : .click)
+        service(AppStatePersistence.self).state.sessionState = .none
     }
 
     public func extendedRuntimeSessionDidStart(
@@ -55,7 +67,10 @@ public final class WristWatchSessionDelegate: NSObject, WKExtendedRuntimeSession
             \(String(describing: session.expirationDate))
             """
         )
-        WKInterfaceDevice.current().play(.success)
+        WKInterfaceDevice.current().play(.start)
+        service(AppStatePersistence.self).state.sessionState = .running(
+            expiry: session.expirationDate ?? .distantPast
+        )
         let correctionInterval = secondsToElapseToFullMinute(date: Date())
         DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(correctionInterval)) { [weak self] in
             self?.playHaptic()
@@ -71,11 +86,11 @@ public final class WristWatchSessionDelegate: NSObject, WKExtendedRuntimeSession
             \(String(describing: session.expirationDate))
             """
         )
-        if let launchDate = session.expirationDate?.addingTimeInterval(1) {
-            WKInterfaceDevice.current().play(.retry)
-            startSession(after: 1)
-            log.info("Going to start new session at \(launchDate)")
-        }
+//        if let launchDate = session.expirationDate?.addingTimeInterval(1) {
+//            WKInterfaceDevice.current().play(.retry)
+//            start(after: 1)
+//            log.info("Going to start new session at \(launchDate)")
+//        }
     }
     
     // MARK: - Private

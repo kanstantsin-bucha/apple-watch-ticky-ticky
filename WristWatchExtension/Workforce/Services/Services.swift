@@ -53,9 +53,11 @@ public func removeAllServices() {
 }
 
 func setupServices() {
-    let declaration: ServiceDeclaration = (service: GatesKeeper(), interface: GatesKeeper.self)
-    let array: [ServiceDeclaration] = [declaration]
-    locator.add(servicesList: array)
+    locator.add(servicesList: [
+        (service: GatesKeeper(), interface: GatesKeeper.self),
+        (service: AppStatePersistence(), interface: AppStatePersistence.self),
+        (service: ExtendedSessionService(), interface: ExtendedSessionService.self)
+    ])
 }
 
 

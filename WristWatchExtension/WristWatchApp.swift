@@ -10,12 +10,16 @@ import WatchKit
 
 @main
 struct WristWatchApp: App {
-    @WKExtensionDelegateAdaptor private var extensionDelegate: WristWatchAppDelegate
+    init() {
+        setupServices()
+    }
     
+    @WKExtensionDelegateAdaptor private var extensionDelegate: WristWatchAppDelegate
+   
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                ContentView(appState: service(AppStatePersistence.self).state)
             }
         }
         WKNotificationScene(

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE63AD8C285E07F000657A76 /* WristWatchSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63AD8B285E07F000657A76 /* WristWatchSessionDelegate.swift */; };
+		FE63AD8C285E07F000657A76 /* ExtendedSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63AD8B285E07F000657A76 /* ExtendedSessionService.swift */; };
+		FE63AD8E285EFA0800657A76 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63AD8D285EFA0800657A76 /* InfoView.swift */; };
+		FE63AD90285EFCA800657A76 /* AppStatePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63AD8F285EFCA800657A76 /* AppStatePersistence.swift */; };
+		FE63AD94285F122F00657A76 /* WKHapticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63AD93285F122F00657A76 /* WKHapticType.swift */; };
 		FE9D613D2854986C006BFE2D /* PushNotification-Buttons.apns in Resources */ = {isa = PBXBuildFile; fileRef = FE9D613A2854986C006BFE2D /* PushNotification-Buttons.apns */; };
 		FE9D613E2854986C006BFE2D /* PushNotification-Simple.apns in Resources */ = {isa = PBXBuildFile; fileRef = FE9D613B2854986C006BFE2D /* PushNotification-Simple.apns */; };
 		FE9D61432855CFC6006BFE2D /* PushNotificationsGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D61422855CFC6006BFE2D /* PushNotificationsGate.swift */; };
@@ -90,7 +93,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FE63AD8B285E07F000657A76 /* WristWatchSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WristWatchSessionDelegate.swift; sourceTree = "<group>"; };
+		FE63AD8B285E07F000657A76 /* ExtendedSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedSessionService.swift; sourceTree = "<group>"; };
+		FE63AD8D285EFA0800657A76 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		FE63AD8F285EFCA800657A76 /* AppStatePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStatePersistence.swift; sourceTree = "<group>"; };
+		FE63AD93285F122F00657A76 /* WKHapticType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKHapticType.swift; sourceTree = "<group>"; };
 		FE9D613A2854986C006BFE2D /* PushNotification-Buttons.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PushNotification-Buttons.apns"; sourceTree = "<group>"; };
 		FE9D613B2854986C006BFE2D /* PushNotification-Simple.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PushNotification-Simple.apns"; sourceTree = "<group>"; };
 		FE9D61422855CFC6006BFE2D /* PushNotificationsGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsGate.swift; sourceTree = "<group>"; };
@@ -150,6 +156,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE63AD91285F0EF100657A76 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FE9D61532855D76A006BFE2D /* Services.swift */,
+				FE63AD8B285E07F000657A76 /* ExtendedSessionService.swift */,
+				FE63AD8F285EFCA800657A76 /* AppStatePersistence.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FE63AD92285F0F3500657A76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FEB6758A2854743E005771BD /* ContentView.swift */,
+				FE63AD8D285EFA0800657A76 /* InfoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FE9D61382854986C006BFE2D /* PushPayloads */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,8 +187,8 @@
 		FE9D61442855CFD5006BFE2D /* Gates */ = {
 			isa = PBXGroup;
 			children = (
-				FE9D61422855CFC6006BFE2D /* PushNotificationsGate.swift */,
 				FE9D614E2855D259006BFE2D /* GatesKeeper.swift */,
+				FE9D61422855CFC6006BFE2D /* PushNotificationsGate.swift */,
 			);
 			path = Gates;
 			sourceTree = "<group>";
@@ -197,9 +222,10 @@
 		FE9D61502855D2F1006BFE2D /* Workforce */ = {
 			isa = PBXGroup;
 			children = (
+				FE9D61442855CFD5006BFE2D /* Gates */,
+				FE63AD91285F0EF100657A76 /* Services */,
 				FE9D61552855D975006BFE2D /* Extensions */,
 				FE9D61512855D307006BFE2D /* Logger.swift */,
-				FE9D61532855D76A006BFE2D /* Services.swift */,
 			);
 			path = Workforce;
 			sourceTree = "<group>";
@@ -208,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				FE9D61562855D987006BFE2D /* DataExtensions.swift */,
+				FE63AD93285F122F00657A76 /* WKHapticType.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,12 +287,10 @@
 			children = (
 				FEB675882854743E005771BD /* WristWatchApp.swift */,
 				FE9D61582855E687006BFE2D /* WristWatchAppDelegate.swift */,
-				FE63AD8B285E07F000657A76 /* WristWatchSessionDelegate.swift */,
-				FEB6758A2854743E005771BD /* ContentView.swift */,
+				FE63AD92285F0F3500657A76 /* Views */,
 				FE9D61502855D2F1006BFE2D /* Workforce */,
 				FE9D61462855CFEF006BFE2D /* Complications */,
 				FE9D61452855CFE1006BFE2D /* Notifications */,
-				FE9D61442855CFD5006BFE2D /* Gates */,
 				FEB675922854743E005771BD /* Assets.xcassets */,
 				FE9D61482855D02C006BFE2D /* WristWatch WatchKit Extension.entitlements */,
 				FEB675972854743E005771BD /* Info.plist */,
@@ -493,11 +518,14 @@
 				FE9D614F2855D259006BFE2D /* GatesKeeper.swift in Sources */,
 				FE9D61572855D987006BFE2D /* DataExtensions.swift in Sources */,
 				FE9D61592855E687006BFE2D /* WristWatchAppDelegate.swift in Sources */,
-				FE63AD8C285E07F000657A76 /* WristWatchSessionDelegate.swift in Sources */,
+				FE63AD8E285EFA0800657A76 /* InfoView.swift in Sources */,
+				FE63AD8C285E07F000657A76 /* ExtendedSessionService.swift in Sources */,
 				FEB675912854743E005771BD /* ComplicationController.swift in Sources */,
 				FEB675892854743E005771BD /* WristWatchApp.swift in Sources */,
+				FE63AD90285EFCA800657A76 /* AppStatePersistence.swift in Sources */,
 				FEB6758F2854743E005771BD /* NotificationView.swift in Sources */,
 				FE9D61432855CFC6006BFE2D /* PushNotificationsGate.swift in Sources */,
+				FE63AD94285F122F00657A76 /* WKHapticType.swift in Sources */,
 				FE9D61542855D76A006BFE2D /* Services.swift in Sources */,
 				FE9D61522855D307006BFE2D /* Logger.swift in Sources */,
 			);

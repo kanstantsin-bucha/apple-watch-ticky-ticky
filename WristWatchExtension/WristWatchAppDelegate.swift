@@ -9,16 +9,13 @@ import Foundation
 import WatchKit
 
 class WristWatchAppDelegate: NSObject, WKExtensionDelegate, ObservableObject {
-    private let sessionDelegate = WristWatchSessionDelegate()
-    
     func applicationDidFinishLaunching() {
-        setupServices()
         log.event("Application DidFinishLaunching")
     }
 
     func applicationDidBecomeActive() {
         log.event("Application DidBecomeActive")
-        sessionDelegate.startSession(after: 1)
+        service(ExtendedSessionService.self).start(after: 1)
         service(GatesKeeper.self).notificationsGate.open()
     }
 
