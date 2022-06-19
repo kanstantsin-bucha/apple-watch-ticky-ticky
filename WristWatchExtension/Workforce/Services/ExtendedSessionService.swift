@@ -14,7 +14,7 @@ public final class ExtendedSessionService: NSObject, Service, WKExtendedRuntimeS
         guard let previous = currentSession, previous.state == .running else {
             return
         }
-        playHaptic(type: .directionDown)
+        playHaptic(type: .stop)
         previous.invalidate()
     }
     
@@ -24,24 +24,18 @@ public final class ExtendedSessionService: NSObject, Service, WKExtendedRuntimeS
             \(String(describing: currentSession))
             """
         )
-        let createNewSession = {
-            let session = WKExtendedRuntimeSession()
-            session.delegate = self
-            session.start(at: Date(timeIntervalSinceNow: postponeInterval))
-            self.currentSession = session
-            service(AppStatePersistence.self).state.sessionState = .scheduled
-            WKInterfaceDevice.current().play(.click)
-            log.event("RuntimeSession created new session")
-        }
-        guard let previous = currentSession, previous.state == .running else {
-            createNewSession()
+        if let previous = currentSession,
+           previous.state == .running || previous.state == .scheduled {
+            log.info("Skip start because the session already running or schediled.")
             return
         }
-        playHaptic(type: .stop)
-        previous.invalidate()
-        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) {
-            createNewSession()
-        }
+        let session = WKExtendedRuntimeSession()
+        session.delegate = self
+        session.start(at: Date(timeIntervalSinceNow: postponeInterval))
+        self.currentSession = session
+        service(AppStatePersistence.self).state.sessionState = .scheduled
+        WKInterfaceDevice.current().play(.click)
+        log.event("RuntimeSession created new session")
     }
     
     public func extendedRuntimeSession(
