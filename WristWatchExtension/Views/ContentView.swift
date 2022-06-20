@@ -20,7 +20,7 @@ struct ContentView: View {
                 if isRunning {
                     service(ExtendedSessionService.self).stop()
                 } else {
-                    service(ExtendedSessionService.self).start(after: 1)
+                    service(ExtendedSessionService.self).start()
                 }
             }
             .foregroundColor(.green)

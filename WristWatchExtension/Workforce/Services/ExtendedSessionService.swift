@@ -18,7 +18,7 @@ public final class ExtendedSessionService: NSObject, Service, WKExtendedRuntimeS
         previous.invalidate()
     }
     
-    public func start(after postponeInterval: TimeInterval) {
+    public func start() {
         log.info("""
             RuntimeSession going to create new session, previous: \
             \(String(describing: currentSession))
@@ -31,7 +31,7 @@ public final class ExtendedSessionService: NSObject, Service, WKExtendedRuntimeS
         }
         let session = WKExtendedRuntimeSession()
         session.delegate = self
-        session.start(at: Date(timeIntervalSinceNow: postponeInterval))
+        session.start()
         self.currentSession = session
         service(AppStatePersistence.self).state.sessionState = .scheduled
         WKInterfaceDevice.current().play(.click)
@@ -65,11 +65,7 @@ public final class ExtendedSessionService: NSObject, Service, WKExtendedRuntimeS
         service(AppStatePersistence.self).state.sessionState = .running(
             expiry: session.expirationDate ?? .distantPast
         )
-        let correctionInterval = secondsToElapseToFullMinute(date: Date())
-        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(correctionInterval)) { [weak self] in
-            self?.playHaptic()
-        }
-        log.info("Scheduled first haptic play event after \(correctionInterval) seconds")
+        countTime()
     }
 
     public func extendedRuntimeSessionWillExpire(
@@ -80,39 +76,44 @@ public final class ExtendedSessionService: NSObject, Service, WKExtendedRuntimeS
             \(String(describing: session.expirationDate))
             """
         )
-//        if let launchDate = session.expirationDate?.addingTimeInterval(1) {
-//            WKInterfaceDevice.current().play(.retry)
-//            start(after: 1)
-//            log.info("Going to start new session at \(launchDate)")
-//        }
     }
     
     // MARK: - Private
     
-    private func playHaptic(type: WKHapticType? = nil) {
+    private func countTime() {
+        let correctionInterval = secondsToElapseToFullMinute(date: Date())
+        log.info("Scheduled haptic play event after \(correctionInterval) seconds")
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(correctionInterval)) { [weak self] in
+            guard let self = self else { return }
+            self.playHaptic(type: self.hapticType(date: Date()))
+            guard let session = self.currentSession,
+                  session.state == .running
+            else {
+                return
+            }
+            self.countTime()
+        }
+    }
+    
+    private func playHaptic(type: WKHapticType) {
         guard let session = currentSession, session.state == .running else {
             log.error("Session is not running, skip haptic action")
             return
         }
         log.event("Play haptic: \(String(describing: type))")
-        let type = type ?? hapticType(date: Date())
-        session.notifyUser(hapticType: type) { [weak self] typePointer in
-            let nextPlayInterval: TimeInterval = 60
-            guard let self = self else { return nextPlayInterval }
-            let type = self.hapticType(date: Date().addingTimeInterval(nextPlayInterval))
-            typePointer.pointee = type
-            log.event("Play repeating haptic: \(type)")
-            return nextPlayInterval
-        }
+        WKInterfaceDevice.current().play(type)
     }
     
     private func hapticType(date: Date) -> WKHapticType {
         let calendar = Calendar.current
         let minutes = calendar.component(.minute, from: date)
-        guard minutes % 5 == 0 else {
-            return .click
+        if minutes % 15 == 0 {
+            return .retry
         }
-        return .start
+        if minutes % 5 == 0 {
+            return .start
+        }
+        return .click
     }
     
     private func secondsToElapseToFullMinute(date: Date) -> Int {

@@ -11,7 +11,7 @@ struct InfoView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("It creates a state of avareness that life is short")
+                Text("It creates a state of avareness and make you feel your body in present instead of dreaming of future or past")
                     .multilineTextAlignment(.center)
                     .padding()
                 Spacer()
@@ -27,7 +27,7 @@ struct InfoView: View {
                 Text("Try to present in a moment and notice every haptic event")
                     .multilineTextAlignment(.center)
                     .padding()
-                Text("Session duration is 30 min")
+                Text("Session duration is 1 hour")
                     .multilineTextAlignment(.center)
                     .padding()
             }
