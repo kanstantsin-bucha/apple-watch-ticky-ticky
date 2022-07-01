@@ -46,6 +46,8 @@ extension WKHapticType: CustomStringConvertible {
         case .notification:
             return "notification"
             
+        @unknown default:
+            preconditionFailure("Unknown haptic type \(self)")
         }
     }
 }
