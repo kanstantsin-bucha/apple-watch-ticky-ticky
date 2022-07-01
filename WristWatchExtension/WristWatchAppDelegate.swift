@@ -16,7 +16,7 @@ class WristWatchAppDelegate: NSObject, WKExtensionDelegate, ObservableObject {
     func applicationDidBecomeActive() {
         log.event("Application DidBecomeActive")
         service(ExtendedSessionService.self).start()
-        service(GatesKeeper.self).notificationsGate.open()
+//        service(GatesKeeper.self).notificationsGate.open()
     }
 
     func applicationWillResignActive() {

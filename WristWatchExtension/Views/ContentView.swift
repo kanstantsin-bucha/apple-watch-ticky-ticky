@@ -11,7 +11,7 @@ struct ContentView: View {
     @ObservedObject var appState: AppState
     var body: some View {
         VStack {
-            Text("Death Watch")
+            Text("Awareness Watch")
                 .font(.caption)
                 .padding()
            

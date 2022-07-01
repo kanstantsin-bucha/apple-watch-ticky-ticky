@@ -4,7 +4,7 @@ storage_mode("git")
 
 type("development") # The default type, can be: appstore, adhoc, enterprise or development
 
-app_identifier(["com.kanstantsinbucha.watch.WristWatch"])
+app_identifier(["bucha.kanstantsin.watchos.awareness", "bucha.kanstantsin.watchos.awareness.watchapp", "bucha.kanstantsin.watchos.awareness.watchapp.extension"])
 username("estbyright@icloud.com") # Your Apple Developer Portal username
 
 # For all available options run `fastlane match --help`
