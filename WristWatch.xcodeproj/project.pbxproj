@@ -21,7 +21,7 @@
 		FE9D61542855D76A006BFE2D /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D61532855D76A006BFE2D /* Services.swift */; };
 		FE9D61572855D987006BFE2D /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D61562855D987006BFE2D /* DataExtensions.swift */; };
 		FE9D61592855E687006BFE2D /* WristWatchAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D61582855E687006BFE2D /* WristWatchAppDelegate.swift */; };
-		FEB675792854743D005771BD /* AwarenessApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FEB675782854743D005771BD /* AwarenessApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FEB675792854743D005771BD /* Awareness Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FEB675782854743D005771BD /* Awareness Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FEB6757E2854743E005771BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEB6757D2854743E005771BD /* Assets.xcassets */; };
 		FEB675842854743E005771BD /* AwarenessExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FEB675832854743E005771BD /* AwarenessExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FEB675892854743E005771BD /* WristWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB675882854743E005771BD /* WristWatchApp.swift */; };
@@ -76,7 +76,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				FEB675792854743D005771BD /* AwarenessApp.app in Embed Watch Content */,
+				FEB675792854743D005771BD /* Awareness Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,8 +101,8 @@
 		FE9D61562855D987006BFE2D /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		FE9D61582855E687006BFE2D /* WristWatchAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WristWatchAppDelegate.swift; sourceTree = "<group>"; };
 		FE9D615B2855F6DF006BFE2D /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
-		FEB675742854743D005771BD /* Awareness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Awareness.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEB675782854743D005771BD /* AwarenessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwarenessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEB675742854743D005771BD /* Awareness Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awareness Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEB675782854743D005771BD /* Awareness Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awareness Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB6757D2854743E005771BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEB675832854743E005771BD /* AwarenessExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AwarenessExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB675882854743E005771BD /* WristWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WristWatchApp.swift; sourceTree = "<group>"; };
@@ -244,8 +244,8 @@
 		FEB675752854743D005771BD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEB675742854743D005771BD /* Awareness.app */,
-				FEB675782854743D005771BD /* AwarenessApp.app */,
+				FEB675742854743D005771BD /* Awareness Watch.app */,
+				FEB675782854743D005771BD /* Awareness Watch.app */,
 				FEB675832854743E005771BD /* AwarenessExtension.appex */,
 				FEB6759D2854743E005771BD /* AwarenessTests.xctest */,
 			);
@@ -311,7 +311,7 @@
 			);
 			name = Awareness;
 			productName = WristWatch;
-			productReference = FEB675742854743D005771BD /* Awareness.app */;
+			productReference = FEB675742854743D005771BD /* Awareness Watch.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
 		};
 		FEB675772854743D005771BD /* AwarenessApp */ = {
@@ -328,7 +328,7 @@
 			);
 			name = AwarenessApp;
 			productName = "WristWatch WatchKit App";
-			productReference = FEB675782854743D005771BD /* AwarenessApp.app */;
+			productReference = FEB675782854743D005771BD /* Awareness Watch.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		FEB675822854743E005771BD /* AwarenessExtension */ = {
@@ -623,13 +623,13 @@
 				CODE_SIGN_ENTITLEMENTS = WristWatchExtension/AwarenessExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"WristWatchExtension/Preview Content\"";
 				DEVELOPMENT_TEAM = J6252NJ42R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WristWatchExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Awareness;
+				INFOPLIST_KEY_CFBundleDisplayName = "Awareness Watch";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = WristWatchExtension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -647,7 +647,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -658,13 +658,13 @@
 				CODE_SIGN_ENTITLEMENTS = WristWatchExtension/AwarenessExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"WristWatchExtension/Preview Content\"";
 				DEVELOPMENT_TEAM = J6252NJ42R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WristWatchExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Awareness;
+				INFOPLIST_KEY_CFBundleDisplayName = "Awareness Watch";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = WristWatchExtension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -682,7 +682,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -695,22 +695,21 @@
 				CODE_SIGN_ENTITLEMENTS = WristWatchApp/AwarenessApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J6252NJ42R;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AwarenessExtension;
-				INFOPLIST_KEY_CFBundleDisplayName = Awareness;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bucha.kanstantsin.watchos.awareness.watchapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Awareness Watch";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development bucha.kanstantsin.watchos.awareness.watchapp";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -723,22 +722,21 @@
 				CODE_SIGN_ENTITLEMENTS = WristWatchApp/AwarenessApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J6252NJ42R;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AwarenessExtension;
-				INFOPLIST_KEY_CFBundleDisplayName = Awareness;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bucha.kanstantsin.watchos.awareness.watchapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Awareness Watch";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development bucha.kanstantsin.watchos.awareness.watchapp";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -747,11 +745,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J6252NJ42R;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bucha.kanstantsin.watchos.awareness;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Awareness Watch";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development bucha.kanstantsin.watchos.awareness";
 				SWIFT_VERSION = 5.0;
 			};
@@ -762,11 +760,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J6252NJ42R;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bucha.kanstantsin.watchos.awareness;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Awareness Watch";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development bucha.kanstantsin.watchos.awareness";
 				SWIFT_VERSION = 5.0;
 			};
