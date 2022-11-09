@@ -85,6 +85,7 @@ public final class ExtendedSessionService: NSObject, Service, WKExtendedRuntimeS
         log.info("Scheduled haptic play event after \(correctionInterval) seconds")
         DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(correctionInterval)) { [weak self] in
             guard let self = self else { return }
+            // TODO: - check if the watch is on a wrist
             self.playHaptic(type: self.hapticType(date: Date()))
             guard let session = self.currentSession,
                   session.state == .running

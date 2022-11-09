@@ -11,11 +11,12 @@ struct ContentView: View {
     @ObservedObject var appState: AppState
     var body: some View {
         VStack {
-            Text("Awareness Watch")
+            Text("Vibe Watch")
                 .font(.caption)
+                .foregroundColor(.yellow)
                 .padding()
            
-            Button(isRunning ? "Stop" : "Start") {
+            Button(isRunning ? "Stop Vibe" : "Start Vibe") {
                 log.event("Start/Stop button tapped")
                 if isRunning {
                     service(ExtendedSessionService.self).stop()
@@ -24,8 +25,8 @@ struct ContentView: View {
                 }
             }
             .foregroundColor(.green)
-            NavigationLink(destination: InfoView()) {
-                Text("Info")
+            NavigationLink(destination: MoreView()) {
+                Text("More")
             }
         }
     }

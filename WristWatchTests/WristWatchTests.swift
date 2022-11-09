@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import WristWatch_WatchKit_Extension
+@testable import VibeWatchAppExtension
 
 class WristWatchTests: XCTestCase {
 
