@@ -11,12 +11,12 @@ struct ContentView: View {
     @ObservedObject var appState: AppState
     var body: some View {
         VStack {
-            Text("Vibe Watch")
+            Text("Ticky-Ticky")
                 .font(.caption)
                 .foregroundColor(.yellow)
                 .padding()
            
-            Button(isRunning ? "Stop Vibe" : "Start Vibe") {
+            Button(isRunning ? "Stop Ticking" : "Start Ticking") {
                 log.event("Start/Stop button tapped")
                 if isRunning {
                     service(ExtendedSessionService.self).stop()

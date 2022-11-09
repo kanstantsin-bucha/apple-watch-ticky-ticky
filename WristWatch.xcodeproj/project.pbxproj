@@ -21,9 +21,9 @@
 		FE9D61542855D76A006BFE2D /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D61532855D76A006BFE2D /* Services.swift */; };
 		FE9D61572855D987006BFE2D /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D61562855D987006BFE2D /* DataExtensions.swift */; };
 		FE9D61592855E687006BFE2D /* WristWatchAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9D61582855E687006BFE2D /* WristWatchAppDelegate.swift */; };
-		FEB675792854743D005771BD /* VibeWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FEB675782854743D005771BD /* VibeWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FEB675792854743D005771BD /* Ticky-Ticky.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FEB675782854743D005771BD /* Ticky-Ticky.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FEB6757E2854743E005771BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEB6757D2854743E005771BD /* Assets.xcassets */; };
-		FEB675842854743E005771BD /* VibeWatchAppExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FEB675832854743E005771BD /* VibeWatchAppExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FEB675842854743E005771BD /* TickyTickyWatchAppExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FEB675832854743E005771BD /* TickyTickyWatchAppExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FEB675892854743E005771BD /* WristWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB675882854743E005771BD /* WristWatchApp.swift */; };
 		FEB6758B2854743E005771BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB6758A2854743E005771BD /* ContentView.swift */; };
 		FEB6758D2854743E005771BD /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB6758C2854743E005771BD /* NotificationController.swift */; };
@@ -66,7 +66,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FEB675842854743E005771BD /* VibeWatchAppExtension.appex in Embed App Extensions */,
+				FEB675842854743E005771BD /* TickyTickyWatchAppExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,7 +77,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				FEB675792854743D005771BD /* VibeWatch.app in Embed Watch Content */,
+				FEB675792854743D005771BD /* Ticky-Ticky.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,9 +103,9 @@
 		FE9D61582855E687006BFE2D /* WristWatchAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WristWatchAppDelegate.swift; sourceTree = "<group>"; };
 		FE9D615B2855F6DF006BFE2D /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		FEB675742854743D005771BD /* Awareness Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awareness Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEB675782854743D005771BD /* VibeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VibeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEB675782854743D005771BD /* Ticky-Ticky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ticky-Ticky.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB6757D2854743E005771BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FEB675832854743E005771BD /* VibeWatchAppExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VibeWatchAppExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEB675832854743E005771BD /* TickyTickyWatchAppExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TickyTickyWatchAppExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB675882854743E005771BD /* WristWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WristWatchApp.swift; sourceTree = "<group>"; };
 		FEB6758A2854743E005771BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FEB6758C2854743E005771BD /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		FEB675922854743E005771BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEB675952854743E005771BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FEB675972854743E005771BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEB6759D2854743E005771BD /* VibeWatchAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VibeWatchAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEB6759D2854743E005771BD /* TickyTickyWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TickyTickyWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB675A12854743E005771BD /* WristWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WristWatchTests.swift; sourceTree = "<group>"; };
 		FEE8B18F291BED0E0070D270 /* SiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,9 +248,9 @@
 			isa = PBXGroup;
 			children = (
 				FEB675742854743D005771BD /* Awareness Watch.app */,
-				FEB675782854743D005771BD /* VibeWatch.app */,
-				FEB675832854743E005771BD /* VibeWatchAppExtension.appex */,
-				FEB6759D2854743E005771BD /* VibeWatchAppTests.xctest */,
+				FEB675782854743D005771BD /* Ticky-Ticky.app */,
+				FEB675832854743E005771BD /* TickyTickyWatchAppExtension.appex */,
+				FEB6759D2854743E005771BD /* TickyTickyWatchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -300,9 +300,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEB675732854743D005771BD /* VibeWatch */ = {
+		FEB675732854743D005771BD /* TickyTickyWatch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEB675B92854743E005771BD /* Build configuration list for PBXNativeTarget "VibeWatch" */;
+			buildConfigurationList = FEB675B92854743E005771BD /* Build configuration list for PBXNativeTarget "TickyTickyWatch" */;
 			buildPhases = (
 				FEB675722854743D005771BD /* Resources */,
 				FEB675B82854743E005771BD /* Embed Watch Content */,
@@ -312,14 +312,14 @@
 			dependencies = (
 				FEB6757B2854743D005771BD /* PBXTargetDependency */,
 			);
-			name = VibeWatch;
+			name = TickyTickyWatch;
 			productName = WristWatch;
 			productReference = FEB675742854743D005771BD /* Awareness Watch.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
 		};
-		FEB675772854743D005771BD /* VibeWatchApp */ = {
+		FEB675772854743D005771BD /* TickyTickyWatchApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEB675B52854743E005771BD /* Build configuration list for PBXNativeTarget "VibeWatchApp" */;
+			buildConfigurationList = FEB675B52854743E005771BD /* Build configuration list for PBXNativeTarget "TickyTickyWatchApp" */;
 			buildPhases = (
 				FEB675762854743D005771BD /* Resources */,
 				FEB675B42854743E005771BD /* Embed App Extensions */,
@@ -329,14 +329,14 @@
 			dependencies = (
 				FEB675862854743E005771BD /* PBXTargetDependency */,
 			);
-			name = VibeWatchApp;
+			name = TickyTickyWatchApp;
 			productName = "WristWatch WatchKit App";
-			productReference = FEB675782854743D005771BD /* VibeWatch.app */;
+			productReference = FEB675782854743D005771BD /* Ticky-Ticky.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		FEB675822854743E005771BD /* VibeWatchAppExtension */ = {
+		FEB675822854743E005771BD /* TickyTickyWatchAppExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEB675B12854743E005771BD /* Build configuration list for PBXNativeTarget "VibeWatchAppExtension" */;
+			buildConfigurationList = FEB675B12854743E005771BD /* Build configuration list for PBXNativeTarget "TickyTickyWatchAppExtension" */;
 			buildPhases = (
 				FEB6757F2854743E005771BD /* Sources */,
 				FEB675802854743E005771BD /* Frameworks */,
@@ -346,14 +346,14 @@
 			);
 			dependencies = (
 			);
-			name = VibeWatchAppExtension;
+			name = TickyTickyWatchAppExtension;
 			productName = "WristWatch WatchKit Extension";
-			productReference = FEB675832854743E005771BD /* VibeWatchAppExtension.appex */;
+			productReference = FEB675832854743E005771BD /* TickyTickyWatchAppExtension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
-		FEB6759C2854743E005771BD /* VibeWatchAppTests */ = {
+		FEB6759C2854743E005771BD /* TickyTickyWatchTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEB675BC2854743E005771BD /* Build configuration list for PBXNativeTarget "VibeWatchAppTests" */;
+			buildConfigurationList = FEB675BC2854743E005771BD /* Build configuration list for PBXNativeTarget "TickyTickyWatchTests" */;
 			buildPhases = (
 				FEB675992854743E005771BD /* Sources */,
 				FEB6759A2854743E005771BD /* Frameworks */,
@@ -364,9 +364,9 @@
 			dependencies = (
 				FEB6759F2854743E005771BD /* PBXTargetDependency */,
 			);
-			name = VibeWatchAppTests;
+			name = TickyTickyWatchTests;
 			productName = WristWatchTests;
-			productReference = FEB6759D2854743E005771BD /* VibeWatchAppTests.xctest */;
+			productReference = FEB6759D2854743E005771BD /* TickyTickyWatchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -407,10 +407,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEB675732854743D005771BD /* VibeWatch */,
-				FEB675772854743D005771BD /* VibeWatchApp */,
-				FEB675822854743E005771BD /* VibeWatchAppExtension */,
-				FEB6759C2854743E005771BD /* VibeWatchAppTests */,
+				FEB675732854743D005771BD /* TickyTickyWatch */,
+				FEB675772854743D005771BD /* TickyTickyWatchApp */,
+				FEB675822854743E005771BD /* TickyTickyWatchAppExtension */,
+				FEB6759C2854743E005771BD /* TickyTickyWatchTests */,
 			);
 		};
 /* End PBXProject section */
@@ -488,17 +488,17 @@
 /* Begin PBXTargetDependency section */
 		FEB6757B2854743D005771BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FEB675772854743D005771BD /* VibeWatchApp */;
+			target = FEB675772854743D005771BD /* TickyTickyWatchApp */;
 			targetProxy = FEB6757A2854743D005771BD /* PBXContainerItemProxy */;
 		};
 		FEB675862854743E005771BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FEB675822854743E005771BD /* VibeWatchAppExtension */;
+			target = FEB675822854743E005771BD /* TickyTickyWatchAppExtension */;
 			targetProxy = FEB675852854743E005771BD /* PBXContainerItemProxy */;
 		};
 		FEB6759F2854743E005771BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FEB675822854743E005771BD /* VibeWatchAppExtension */;
+			target = FEB675822854743E005771BD /* TickyTickyWatchAppExtension */;
 			targetProxy = FEB6759E2854743E005771BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -561,7 +561,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -616,7 +616,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -633,7 +633,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WristWatchExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = VibeWatch;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ticky-Ticky";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = WristWatchExtension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -642,7 +642,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = bucha.kanstantsin.watchos.awareness.watchapp.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development bucha.kanstantsin.watchos.awareness.watchapp.extension";
@@ -668,7 +668,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WristWatchExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = VibeWatch;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ticky-Ticky";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = WristWatchExtension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -677,7 +677,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = bucha.kanstantsin.watchos.awareness.watchapp.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development bucha.kanstantsin.watchos.awareness.watchapp.extension";
@@ -704,9 +704,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AwarenessExtension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = bucha.kanstantsin.watchos.awareness.watchapp;
-				PRODUCT_NAME = VibeWatch;
+				PRODUCT_NAME = "Ticky-Ticky";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development bucha.kanstantsin.watchos.awareness.watchapp";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -731,9 +731,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AwarenessExtension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = bucha.kanstantsin.watchos.awareness.watchapp;
-				PRODUCT_NAME = VibeWatch;
+				PRODUCT_NAME = "Ticky-Ticky";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development bucha.kanstantsin.watchos.awareness.watchapp";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -749,9 +749,9 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J6252NJ42R;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = bucha.kanstantsin.watchos.awareness;
 				PRODUCT_NAME = "Awareness Watch";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development bucha.kanstantsin.watchos.awareness";
@@ -764,9 +764,9 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J6252NJ42R;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = bucha.kanstantsin.watchos.awareness;
 				PRODUCT_NAME = "Awareness Watch";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development bucha.kanstantsin.watchos.awareness";
@@ -790,7 +790,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VibeWatchAppExtension.appex/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VibeWatchAppExtension";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TickyTickyWatchAppExtension.appex/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TickyTickyWatchAppExtension";
 				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
@@ -811,7 +811,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VibeWatchAppExtension.appex/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VibeWatchAppExtension";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TickyTickyWatchAppExtension.appex/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TickyTickyWatchAppExtension";
 				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
@@ -828,7 +828,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEB675B12854743E005771BD /* Build configuration list for PBXNativeTarget "VibeWatchAppExtension" */ = {
+		FEB675B12854743E005771BD /* Build configuration list for PBXNativeTarget "TickyTickyWatchAppExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEB675B22854743E005771BD /* Debug */,
@@ -837,7 +837,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEB675B52854743E005771BD /* Build configuration list for PBXNativeTarget "VibeWatchApp" */ = {
+		FEB675B52854743E005771BD /* Build configuration list for PBXNativeTarget "TickyTickyWatchApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEB675B62854743E005771BD /* Debug */,
@@ -846,7 +846,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEB675B92854743E005771BD /* Build configuration list for PBXNativeTarget "VibeWatch" */ = {
+		FEB675B92854743E005771BD /* Build configuration list for PBXNativeTarget "TickyTickyWatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEB675BA2854743E005771BD /* Debug */,
@@ -855,7 +855,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEB675BC2854743E005771BD /* Build configuration list for PBXNativeTarget "VibeWatchAppTests" */ = {
+		FEB675BC2854743E005771BD /* Build configuration list for PBXNativeTarget "TickyTickyWatchTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEB675BD2854743E005771BD /* Debug */,
